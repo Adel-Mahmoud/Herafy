@@ -22,6 +22,7 @@
             background-color: #F9FAFE;
             color: #1E2A3E;
             line-height: 1.5;
+            overflow-x: hidden;
         }
 
         .container {
@@ -63,6 +64,7 @@
             font-weight: 800;
             color: #1F4E45;
         }
+        /* Desktop navigation */
         .nav-links {
             display: flex;
             gap: 28px;
@@ -77,6 +79,173 @@
         .nav-links a:hover {
             color: #2A7F6E;
         }
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: #2A7F6E;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            color: white;
+            font-size: 22px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+            z-index: 1002;
+        }
+        
+        .mobile-menu-btn:hover {
+            background: #1E5F51;
+        }
+        
+        /* Sidebar Overlay */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Sidebar Menu */
+        .sidebar-menu {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 280px;
+            height: 100%;
+            background: white;
+            box-shadow: -4px 0 25px rgba(0,0,0,0.1);
+            z-index: 1101;
+            transition: right 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            overflow-y: auto;
+        }
+        .sidebar-menu.open {
+            right: 0;
+        }
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #EFF7F5;
+            padding-bottom: 15px;
+            margin-bottom: 10px;
+        }
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sidebar-logo i {
+            font-size: 28px;
+            color: #2A7F6E;
+        }
+        .sidebar-logo span {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1F4E45;
+        }
+        .close-sidebar {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .close-sidebar:hover {
+            background: #F0F0F0;
+        }
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar-nav li a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #2C3E50;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            transition: 0.2s;
+        }
+        .sidebar-nav li a:hover {
+            color: #2A7F6E;
+            padding-right: 8px;
+        }
+        .sidebar-home-btn {
+            margin-top: 20px;
+            background: #2A7F6E;
+            border: none;
+            padding: 12px;
+            border-radius: 40px;
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 52px;
+            height: 52px;
+            background: #2A7F6E;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background: #1E5F51;
+            transform: translateY(-3px);
+        }
+        
         .btn-outline {
             border: 2px solid #2A7F6E;
             background: transparent;
@@ -133,13 +302,14 @@
             to { opacity: 1; transform: translateY(0);}
         }
 
-        /* Hero */
+        /* Hero with new image */
         .hero {
             padding: 60px 0 40px;
             background: linear-gradient(135deg, #EFF7F5 0%, #FFFFFF 100%);
         }
         .hero-grid {
             display: flex;
+            flex-direction: row-reverse;
             align-items: center;
             gap: 40px;
             flex-wrap: wrap;
@@ -147,7 +317,16 @@
         .hero-content { flex: 1; }
         .hero-content h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; }
         .hero-image { flex: 1; text-align: center; }
-        .hero-image img { max-width: 100%; width: 350px; }
+        .hero-image img { 
+            max-width: 100%; 
+            width: 400px; 
+            border-radius: 32px;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .hero-image img:hover {
+            transform: scale(1.02);
+        }
 
         /* Categories Grid */
         .section { padding: 60px 0; }
@@ -300,12 +479,37 @@
             padding: 40px 0 20px;
             margin-top: 40px;
         }
+        .no-results { text-align: center; padding: 40px; color: #666; }
+        /* Hide desktop elements on mobile */
+        @media (max-width: 768px) {
+            .nav-links, .btn-outline {
+                display: none;
+            }
+            .nav {
+                justify-content: space-between;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .hero-grid {
+                display: block;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 1.8rem; }
             .detail-content { padding: 60px 20px 30px; }
             .detail-avatar { width: 90px; height: 90px; bottom: -40px; right: 20px; }
+            .hero-image img { width: 100%; }
+            .back-to-top {
+                bottom: 20px;
+                left: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
         }
-        .no-results { text-align: center; padding: 40px; color: #666; }
     </style>
 </head>
 <body>
@@ -323,22 +527,43 @@
                 <li><a href="#" data-page="home">الحرفيون</a></li>
             </ul>
             <button class="btn-outline" id="backToHomeBtn">🏠 الرئيسية</button>
+            <button class="mobile-menu-btn" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </div>
 </header>
+
+<!-- Sidebar Overlay & Menu -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<div class="sidebar-menu" id="sidebarMenu">
+    <div class="sidebar-header">
+        <div class="sidebar-logo">
+            <i class="fas fa-hands-helping"></i>
+            <span>حِرَفِيّ</span>
+        </div>
+        <button class="close-sidebar" id="closeSidebar"><i class="fas fa-times"></i></button>
+    </div>
+    <ul class="sidebar-nav">
+        <li><a href="#" data-sidebar-page="home"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="#" data-sidebar-page="home"><i class="fas fa-tags"></i> التصنيفات</a></li>
+        <li><a href="#" data-sidebar-page="home"><i class="fas fa-tools"></i> الحرفيون</a></li>
+    </ul>
+    <button class="sidebar-home-btn" id="sidebarHomeBtn"><i class="fas fa-arrow-right"></i> العودة للرئيسية</button>
+</div>
 
 <main>
     <!-- الصفحة الرئيسية -->
     <div id="homePage" class="page active-page">
         <section class="hero">
             <div class="container hero-grid">
+                <div class="hero-image">
+                    <img src="./hero-image.jpeg" alt="حرفيون يعملون" style="border-radius: 28px;">
+                </div>
                 <div class="hero-content">
                     <h1>ابحث عن أفضل الحرفيين في بلدك <span style="color:#2A7F6E;">بسهولة</span></h1>
                     <p>كهربائي، سباك، نجار، نقاش — كل المهن الموثوقة في مكان واحد مع تفاصيل كاملة وموقع على الخريطة.</p>
                     <button class="btn-primary" id="exploreBtn"><i class="fas fa-search"></i> استعرض الحرفيين</button>
-                </div>
-                <div class="hero-image">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="حرفيون">
                 </div>
             </div>
         </section>
@@ -395,9 +620,14 @@
             <div><h4>روابط سريعة</h4><p><a href="#" style="color:#CFE4DF;" data-page="home">الرئيسية</a> | <a href="#" style="color:#CFE4DF;" data-page="home">الحرفيون</a></p></div>
             <div><h4>تواصل</h4><i class="fab fa-whatsapp"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></div>
         </div>
-        <div class="copyright" style="text-align:center; margin-top:30px;">© 2025 حرفي — جميع الحقوق محفوظة</div>
+        <div class="copyright" style="text-align:center; margin-top:30px;">© 2026 عادل محمود — جميع الحقوق محفوظة</div>
     </div>
 </footer>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTopBtn" aria-label="العودة للأعلى">
+    <i class="fas fa-arrow-up"></i>
+</button>
 
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -405,7 +635,20 @@
     // ---------- بيانات متطورة مع صور إضافية ومواقع خرائط ----------
     const providers = [
         { 
-            id: 1, name: "أحمد محمد", job: "كهربائي", 
+            id: 1, name: "محمود رمضان", job: "حلاق", 
+            bio: "أقدم خدمات الحلاقة الرجالية والعناية بالمظهر بأعلى معايير النظافة والاحترافية. دقة في التنفيذ، مواعيد منضبطة، وضمان إطلالة تليق بك باستخدام أحدث الأدوات",
+            phone: "01062717190", 
+            avatar: "./mahmoud-ramadan.jpg",
+            // cover: "2.jpeg",
+            gallery: [
+                "/1.jpeg",
+                "/2.jpeg",
+                "/3.jpeg",
+            ],
+            location: { lat: 27.932088, lng: 30.835812, address: "المنيا - ابو قرقاص " }
+        },
+        { 
+            id: 2, name: "أحمد محمد", job: "كهربائي", 
             bio: "خبرة 15 عاماً في مجال الكهرباء المنزلية والصناعية. أقدم خدمات التركيب والصيانة والكشف عن الأعطال بأحدث الأجهزة. خدمة سريعة وضمان على العمل.",
             phone: "+966 50 111 2233", 
             avatar: "https://randomuser.me/api/portraits/men/32.jpg",
@@ -415,10 +658,10 @@
                 "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg",
                 "https://images.pexels.com/photos/210600/pexels-photo-210600.jpeg"
             ],
-            location: { lat: 24.7136, lng: 46.6753, address: "الرياض - حي الملقا" } // إحداثيات مثال
+            location: { lat: 24.7136, lng: 46.6753, address: "الرياض - حي الملقا" }
         },
         { 
-            id: 2, name: "سعيد العتيبي", job: "سباك", 
+            id: 3, name: "سعيد العتيبي", job: "سباك", 
             bio: "متخصص في تركيب شبكات المياه والصرف الصحي، كشف التسربات بالكاميرات الحرارية، إصلاح سخانات وخلاطات. خدمة 24 ساعة.",
             phone: "+966 55 222 3344", 
             avatar: "https://randomuser.me/api/portraits/men/45.jpg",
@@ -430,7 +673,7 @@
             location: { lat: 24.7743, lng: 46.7385, address: "الرياض - النرجس" }
         },
         { 
-            id: 3, name: "يوسف رجب", job: "نجار", 
+            id: 4, name: "يوسف رجب", job: "نجار", 
             bio: "أعمال نجارة متكاملة: مطابخ، غرف نوم، ديكورات خشبية، تركيب باركيه. تصميمات عصرية وجودة إتقان.",
             phone: "+966 54 987 6543", 
             avatar: "https://randomuser.me/api/portraits/men/22.jpg",
@@ -448,14 +691,15 @@
         { name: "سباك", icon: "fas fa-wrench" },
         { name: "نجار", icon: "fas fa-hammer" },
         { name: "حداد", icon: "fas fa-industry" },
-        { name: "نقاش", icon: "fas fa-paint-roller" }
+        { name: "نقاش", icon: "fas fa-paint-roller" },
+        { name: "حلاق", icon: "fas fa-scissors" }
     ];
-
+/*
     const testimonials = [
         { text: "خدمة رائعة وتفاصيل الموقع ساعدتني أختار النجار المناسب.", name: "أبو خالد", img: "https://randomuser.me/api/portraits/men/20.jpg" },
         { text: "خريطة الموقع دقيقة جداً وسهلت علي الوصول للسباك.", name: "أم يوسف", img: "https://randomuser.me/api/portraits/women/12.jpg" }
     ];
-
+*/
     // التحكم بين الصفحات
     const homePage = document.getElementById('homePage');
     const detailPage = document.getElementById('detailPage');
@@ -465,7 +709,8 @@
         homePage.classList.add('active-page');
         detailPage.classList.remove('active-page');
         window.scrollTo(0,0);
-        renderProvidersList(currentProviders); // refresh if search changed
+        renderProvidersList(currentProviders);
+        closeSidebar();
     }
     
     function showDetail(providerId) {
@@ -475,13 +720,14 @@
         detailPage.classList.add('active-page');
         renderDetailPage(provider);
         window.scrollTo(0,0);
+        closeSidebar();
     }
     
     function renderDetailPage(provider) {
         detailContainer.innerHTML = `
             <div class="detail-container">
                 <div class="detail-header">
-                    <img src="${provider.cover}" alt="cover">
+                    <img src="${provider.cover ?? 'bg.jpeg'}" alt="cover">
                     <img src="${provider.avatar}" class="detail-avatar" alt="avatar">
                 </div>
                 <div class="detail-content">
@@ -508,7 +754,6 @@
                 </div>
             </div>
         `;
-        // تهيئة الخريطة
         const map = L.map('providerMap').setView([provider.location.lat, provider.location.lng], 14);
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors'
@@ -523,7 +768,6 @@
         document.getElementById('backHomeFromDetail').onclick = () => showHome();
     }
     
-    // منطق الصفحة الرئيسية (عرض الكروت والبحث)
     let currentProviders = [...providers];
     function renderProvidersList(providersArray) {
         const container = document.getElementById('providersContainer');
@@ -543,7 +787,6 @@
                 </div>
             </div>
         `).join('');
-        // إضافة مستمعين لأزرار التفاصيل
         document.querySelectorAll('.view-detail-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -560,7 +803,6 @@
         renderProvidersList(currentProviders);
     }
     
-    // عرض التصنيفات
     function renderCategories() {
         const grid = document.getElementById('categoriesGrid');
         if(grid) {
@@ -575,11 +817,12 @@
                     document.getElementById('searchInput').value = card.getAttribute('data-cat');
                     filterProviders();
                     document.getElementById('providersSection').scrollIntoView({ behavior: 'smooth' });
+                    closeSidebar();
                 });
             });
         }
     }
-    
+    /*
     function renderTestimonials() {
         const tGrid = document.getElementById('testimonialsGrid');
         if(tGrid) {
@@ -593,6 +836,44 @@
             `).join('');
         }
     }
+    */
+    // Sidebar Functions
+    const sidebarMenu = document.getElementById('sidebarMenu');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const closeSidebarBtn = document.getElementById('closeSidebar');
+    const sidebarHomeBtn = document.getElementById('sidebarHomeBtn');
+    
+    function openSidebar() {
+        sidebarMenu.classList.add('open');
+        sidebarOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeSidebar() {
+        sidebarMenu.classList.remove('open');
+        sidebarOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    mobileMenuToggle?.addEventListener('click', openSidebar);
+    closeSidebarBtn?.addEventListener('click', closeSidebar);
+    sidebarOverlay?.addEventListener('click', closeSidebar);
+    sidebarHomeBtn?.addEventListener('click', () => { showHome(); closeSidebar(); });
+    document.querySelectorAll('[data-sidebar-page="home"]').forEach(link => {
+        link.addEventListener('click', (e) => { e.preventDefault(); showHome(); closeSidebar(); });
+    });
+    
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
     
     // Event listeners
     document.getElementById('searchBtn')?.addEventListener('click', filterProviders);
@@ -605,10 +886,9 @@
     // بدء التشغيل
     renderCategories();
     renderProvidersList(providers);
-    renderTestimonials();
+    // renderTestimonials();
     currentProviders = [...providers];
     
-    // تصحيح روابط الهيدر للعودة للرئيسية
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
