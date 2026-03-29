@@ -2,7 +2,7 @@
   "name": "حرفتي | منصة الحرفيين في قريتك",
   "short_name": "حرفتي",
   "description": "منصة ربط الحرفيين بأهل القرية بكل شفافية - ابحث عن كهربائي، سباك، نجار، نقاش بسهولة",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "theme_color": "#2A7F6E",
   "background_color": "#F9FAFE",
