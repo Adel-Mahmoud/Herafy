@@ -1,0 +1,42 @@
+{
+  "name": "حرفتي | منصة الحرفيين في قريتك",
+  "short_name": "حرفتي",
+  "description": "منصة ربط الحرفيين بأهل القرية بكل شفافية - ابحث عن كهربائي، سباك، نجار، نقاش بسهولة",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#2A7F6E",
+  "background_color": "#F9FAFE",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "ar",
+  "dir": "rtl",
+  "categories": ["business", "productivity", "lifestyle"],
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "bg.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "البحث عن حرفي",
+      "short_name": "بحث",
+      "description": "ابحث عن حرفي في منطقتك",
+      "icons": [
+        {
+          "src": "logo.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
