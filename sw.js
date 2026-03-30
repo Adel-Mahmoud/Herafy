@@ -2,11 +2,11 @@ const CACHE_NAME = "herafy-v1";
 
 const urlsToCache = [
   "./",
-  "./index.html",
+  "index.html",
   "offline.html",
-  "./logo.png",
-  "./bg.png",
-  "./hero-image.jpeg"
+  "logo.png",
+  "bg.png",
+  "hero-image.jpeg"
 ];
 
 self.addEventListener("install", event => {
