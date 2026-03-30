@@ -1,7 +1,7 @@
 const CACHE_NAME = "herafy-v1";
 
 const urlsToCache = [
-  "./",
+  "/",
   "index.html",
   "offline.html",
   "logo.png",
