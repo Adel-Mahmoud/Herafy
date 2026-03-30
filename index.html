@@ -917,7 +917,7 @@ if ('serviceWorker' in navigator) {
     sidebarOverlay?.addEventListener('click', closeSidebar);
     sidebarHomeBtn?.addEventListener('click', () => { showHome(); closeSidebar(); });
     document.querySelectorAll('[data-sidebar-page="home"]').forEach(link => {
-        link.addEventListener('click', (e) => { e.preventDefault(); showHome(); closeSidebar(); });
+        link.addEventListener('click', (e) => { /* e.preventDefault(); */ showHome(); closeSidebar(); });
     });
     
     // Back to Top Button
@@ -939,7 +939,7 @@ if ('serviceWorker' in navigator) {
     document.getElementById('exploreBtn')?.addEventListener('click', () => document.getElementById('providersSection').scrollIntoView({ behavior: 'smooth' }));
     document.getElementById('backToHomeBtn')?.addEventListener('click', showHome);
     document.getElementById('homeLogo')?.addEventListener('click', showHome);
-    document.querySelectorAll('[data-page="home"]').forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); showHome(); }));
+    document.querySelectorAll('[data-page="home"]').forEach(el => el.addEventListener('click', (e) => { /* e.preventDefault(); */ showHome(); }));
     
     // بدء التشغيل
     renderCategories();
@@ -949,7 +949,7 @@ if ('serviceWorker' in navigator) {
     
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
+            /* e.preventDefault(); */
             showHome();
         });
     });
