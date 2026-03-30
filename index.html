@@ -413,7 +413,8 @@
         }
         .detail-header {
             position: relative;
-            height: 320px;
+            width: 100%;
+            aspect-ratio: 1 / 1;
             overflow: hidden;
         }
         .detail-header img {
@@ -424,13 +425,15 @@
         .detail-avatar {
             position: absolute;
             bottom: -50px;
-            right: 40px;
+            left: 50%;
+            transform: translateX(-50%);
             width: 130px;
             height: 130px;
             border-radius: 50%;
             border: 5px solid white;
             object-fit: cover;
             background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .detail-content {
             padding: 70px 40px 40px 40px;
@@ -503,7 +506,7 @@
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 1.8rem; }
             .detail-content { padding: 60px 20px 30px; }
-            .detail-avatar { width: 90px; height: 90px; bottom: -40px; right: 20px; }
+            .detail-avatar { width: 90px; height: 90px; bottom: -40px; }
             .hero-image img { width: 100%; }
             .back-to-top {
                 bottom: 20px;
