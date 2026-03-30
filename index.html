@@ -19,7 +19,11 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
+        html {
+          scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Tajawal', sans-serif;
             background-color: #F9FAFE;
@@ -552,6 +556,8 @@
                 transform: rotate(360deg);
             }
         }
+        
+        
     </style>
 </head>
 <body>
@@ -568,9 +574,9 @@
                 <span class="logo-text">حِرَفِيّ</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#" data-page="home">الرئيسية</a></li>
-                <li><a href="#" data-page="home">التصنيفات</a></li>
-                <li><a href="#" data-page="home">الحرفيون</a></li>
+                <li><a href="#homePage" data-page="home">الرئيسية</a></li>
+                <li><a href="#categories" data-page="home">التصنيفات</a></li>
+                <li><a href="#providersSection" data-page="home">الحرفيون</a></li>
             </ul>
             <button class="btn-outline" id="backToHomeBtn">🏠 الرئيسية</button>
             <button class="mobile-menu-btn" id="mobileMenuToggle">
@@ -591,9 +597,9 @@
         <button class="close-sidebar" id="closeSidebar"><i class="fas fa-times"></i></button>
     </div>
     <ul class="sidebar-nav">
-        <li><a href="#" data-sidebar-page="home"><i class="fas fa-home"></i> الرئيسية</a></li>
-        <li><a href="#" data-sidebar-page="home"><i class="fas fa-tags"></i> التصنيفات</a></li>
-        <li><a href="#" data-sidebar-page="home"><i class="fas fa-tools"></i> الحرفيون</a></li>
+        <li><a href="#homePage" data-sidebar-page="home"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="#categories" data-sidebar-page="home"><i class="fas fa-tags"></i> التصنيفات</a></li>
+        <li><a href="#providersSection" data-sidebar-page="home"><i class="fas fa-tools"></i> الحرفيون</a></li>
     </ul>
     <button class="sidebar-home-btn" id="sidebarHomeBtn"><i class="fas fa-arrow-right"></i> العودة للرئيسية</button>
 </div>
