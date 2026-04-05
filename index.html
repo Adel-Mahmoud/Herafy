@@ -136,8 +136,19 @@
 </button>
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/Herafy/sw.js')
-    .then(() => console.log("Service Worker Registered"));
+  navigator.serviceWorker.register('/Herafy/sw.js').then(reg => {
+
+    reg.onupdatefound = () => {
+      const newWorker = reg.installing;
+
+      newWorker.onstatechange = () => {
+        if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+          showUpdateNotification();
+        }
+      };
+    };
+
+  });
 }
 </script>
 <script src="./assets/js/script.js"></script>
