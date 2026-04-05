@@ -48,12 +48,12 @@
             id: 1, name: "محمود رمضان", job: "حلاق", 
             bio: "أقدم خدمات الحلاقة الرجالية والعناية بالمظهر بأعلى معايير النظافة والاحترافية. دقة في التنفيذ، مواعيد منضبطة، وضمان إطلالة تليق بك باستخدام أحدث الأدوات",
             phone: "01062717190", 
-            avatar: "./assets/imgs/mahmoud-ramadan.jpg",
+            avatar: "/Herafy/assets/imgs/mahmoud-ramadan.jpg",
             // cover: "2.jpeg",
             gallery: [
-                "./assets/imgs/1.jpeg",
-                "./assets/imgs/2.jpeg",
-                "./assets/imgs/3.jpeg",
+                "/Herafy/assets/imgs/1.jpeg",
+                "/Herafy/assets/imgs/2.jpeg",
+                "/Herafy/assets/imgs/3.jpeg",
             ],
             location: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3523.052733891317!2d30.839760075477642!3d27.99228297602038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDU5JzMyLjIiTiAzMMKwNTAnMzIuNCJF!5e0!3m2!1sen!2seg!4v1775304123946!5m2!1sen!2seg"
         },
@@ -100,7 +100,7 @@
         detailContainer.innerHTML = `
             <div class="detail-container">
                 <div class="detail-header">
-                    <img src="${provider.cover ?? 'bg.png'}" alt="cover">
+                    <img src="${provider.cover ?? '/Herafy/bg.png'}" alt="cover">
                     <img src="${provider.avatar}" class="detail-avatar" alt="avatar">
                 </div>
                 <div class="detail-content">

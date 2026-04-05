@@ -12,145 +12,145 @@
     <link rel="manifest" href="/Herafy/manifest.json">
     <meta name="theme-color" content="#2A7F6E">
     <link rel="icon" type="image/png" href="/Herafy/logo.png">
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="/Herafy/assets/css/style.css" />
 </head>
 <body>
- 
-<div id="loader">
-    <div class="spinner"></div>
-</div>
+     
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+        
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo-area" id="homeLogo">
+                    <i class="fas fa-hands-helping logo-icon"></i>
+                    <span class="logo-text">حِرَفِيّ</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#homePage" data-page="home">الرئيسية</a></li>
+                    <li><a href="#categories" data-page="home">التصنيفات</a></li>
+                    <li><a href="#providersSection" data-page="home">الحرفيون</a></li>
+                </ul>
+                <button class="btn-outline" id="backToHomeBtn">🏠 الرئيسية</button>
+                <button class="mobile-menu-btn" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
     
-<header class="header">
-    <div class="container">
-        <div class="nav">
-            <div class="logo-area" id="homeLogo">
-                <i class="fas fa-hands-helping logo-icon"></i>
-                <span class="logo-text">حِرَفِيّ</span>
+    <!-- Sidebar Overlay & Menu -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar-menu" id="sidebarMenu">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>حِرَفِيّ</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#homePage" data-page="home">الرئيسية</a></li>
-                <li><a href="#categories" data-page="home">التصنيفات</a></li>
-                <li><a href="#providersSection" data-page="home">الحرفيون</a></li>
-            </ul>
-            <button class="btn-outline" id="backToHomeBtn">🏠 الرئيسية</button>
-            <button class="mobile-menu-btn" id="mobileMenuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="close-sidebar" id="closeSidebar"><i class="fas fa-times"></i></button>
         </div>
+        <ul class="sidebar-nav">
+            <li><a href="#homePage" data-sidebar-page="home"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="#categories" data-sidebar-page="home"><i class="fas fa-tags"></i> التصنيفات</a></li>
+            <li><a href="#providersSection" data-sidebar-page="home"><i class="fas fa-tools"></i> الحرفيون</a></li>
+        </ul>
+        <button class="sidebar-home-btn" id="sidebarHomeBtn"><i class="fas fa-arrow-right"></i> العودة للرئيسية</button>
     </div>
-</header>
-
-<!-- Sidebar Overlay & Menu -->
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
-<div class="sidebar-menu" id="sidebarMenu">
-    <div class="sidebar-header">
-        <div class="sidebar-logo">
-            <i class="fas fa-hands-helping"></i>
-            <span>حِرَفِيّ</span>
-        </div>
-        <button class="close-sidebar" id="closeSidebar"><i class="fas fa-times"></i></button>
-    </div>
-    <ul class="sidebar-nav">
-        <li><a href="#homePage" data-sidebar-page="home"><i class="fas fa-home"></i> الرئيسية</a></li>
-        <li><a href="#categories" data-sidebar-page="home"><i class="fas fa-tags"></i> التصنيفات</a></li>
-        <li><a href="#providersSection" data-sidebar-page="home"><i class="fas fa-tools"></i> الحرفيون</a></li>
-    </ul>
-    <button class="sidebar-home-btn" id="sidebarHomeBtn"><i class="fas fa-arrow-right"></i> العودة للرئيسية</button>
-</div>
-
-<main>
-    <!-- الصفحة الرئيسية -->
-    <div id="homePage" class="page active-page">
-        <section class="hero">
-            <div class="container hero-grid">
-                <div class="hero-image">
-                    <img src="./hero-image.jpeg" alt="حرفيون يعملون" style="border-radius: 28px;">
-                </div>
-                <div class="hero-content">
-                    <h1>ابحث عن أفضل الحرفيين في بلدك <span style="color:#2A7F6E;">بسهولة</span></h1>
-                    <p>كهربائي، سباك، نجار، نقاش — كل المهن الموثوقة في مكان واحد مع تفاصيل كاملة وموقع على الخريطة.</p>
-                    <button class="btn-primary" id="exploreBtn"><i class="fas fa-search"></i> استعرض الحرفيين</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="categories" class="section">
-            <div class="container">
-                <div class="section-title">📌 التصنيفات</div>
-                <div class="categories-grid" id="categoriesGrid"></div>
-            </div>
-        </section>
-
-        <section id="providersSection" class="section">
-            <div class="container">
-                <div class="section-title">🛠️ الحرفيون المميزون</div>
-                <div class="search-wrapper">
-                    <div class="search-box">
-                        <input type="text" id="searchInput" placeholder="ابحث بالاسم أو المهنة...">
-                        <button id="searchBtn"><i class="fas fa-filter"></i> بحث</button>
+    
+    <main>
+        <!-- الصفحة الرئيسية -->
+        <div id="homePage" class="page active-page">
+            <section class="hero">
+                <div class="container hero-grid">
+                    <div class="hero-image">
+                        <img src="/Herafy/hero-image.jpeg" alt="حرفيون يعملون" style="border-radius: 28px;">
+                    </div>
+                    <div class="hero-content">
+                        <h1>ابحث عن أفضل الحرفيين في بلدك <span style="color:#2A7F6E;">بسهولة</span></h1>
+                        <p>كهربائي، سباك، نجار، نقاش — كل المهن الموثوقة في مكان واحد مع تفاصيل كاملة وموقع على الخريطة.</p>
+                        <button class="btn-primary" id="exploreBtn"><i class="fas fa-search"></i> استعرض الحرفيين</button>
                     </div>
                 </div>
-                <div id="providersContainer" class="providers-grid"></div>
-            </div>
-        </section>
-
-        <section class="section" style="background:#F0F6F4;">
-            <div class="container">
-                <div class="section-title">📢 كيف يعمل الموقع؟</div>
-                <div class="steps-grid">
-                    <div class="step-item"><div class="step-num">1</div><h3>اختر الخدمة</h3><p>تصفح الحرفيين أو اختر تصنيفًا</p></div>
-                    <div class="step-item"><div class="step-num">2</div><h3>شاهد التفاصيل</h3><p>اطلع على الصور والموقع والخبرات</p></div>
-                    <div class="step-item"><div class="step-num">3</div><h3>تواصل مباشر</h3><p>احصل على الرقم وتواصل فوراً</p></div>
+            </section>
+    
+            <section id="categories" class="section">
+                <div class="container">
+                    <div class="section-title">📌 التصنيفات</div>
+                    <div class="categories-grid" id="categoriesGrid"></div>
                 </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-title">💬 آراء المستخدمين</div>
-                <div class="testimonials-grid" id="testimonialsGrid"></div>
-            </div>
-        </section>
-    </div>
-
-    <!-- صفحة التفاصيل المستقلة -->
-    <div id="detailPage" class="page">
-        <div class="container" id="detailContainer"></div>
-    </div>
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-            <div><h4>حِرَفِيّ</h4><p>منصة ربط الحرفيين بأهل القرية بكل شفافية.</p></div>
-            <div><h4>روابط سريعة</h4><p><a href="#" style="color:#CFE4DF;" data-page="home">الرئيسية</a> | <a href="#" style="color:#CFE4DF;" data-page="home">الحرفيون</a></p></div>
-            <div><h4>تواصل</h4><i class="fab fa-whatsapp"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></div>
+            </section>
+    
+            <section id="providersSection" class="section">
+                <div class="container">
+                    <div class="section-title">🛠️ الحرفيون المميزون</div>
+                    <div class="search-wrapper">
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="ابحث بالاسم أو المهنة...">
+                            <button id="searchBtn"><i class="fas fa-filter"></i> بحث</button>
+                        </div>
+                    </div>
+                    <div id="providersContainer" class="providers-grid"></div>
+                </div>
+            </section>
+    
+            <section class="section" style="background:#F0F6F4;">
+                <div class="container">
+                    <div class="section-title">📢 كيف يعمل الموقع؟</div>
+                    <div class="steps-grid">
+                        <div class="step-item"><div class="step-num">1</div><h3>اختر الخدمة</h3><p>تصفح الحرفيين أو اختر تصنيفًا</p></div>
+                        <div class="step-item"><div class="step-num">2</div><h3>شاهد التفاصيل</h3><p>اطلع على الصور والموقع والخبرات</p></div>
+                        <div class="step-item"><div class="step-num">3</div><h3>تواصل مباشر</h3><p>احصل على الرقم وتواصل فوراً</p></div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="section">
+                <div class="container">
+                    <div class="section-title">💬 آراء المستخدمين</div>
+                    <div class="testimonials-grid" id="testimonialsGrid"></div>
+                </div>
+            </section>
         </div>
-        <div class="copyright" style="text-align:center; margin-top:30px;">© 2026 عادل محمود — جميع الحقوق محفوظة</div>
-    </div>
-</footer>
-
-<!-- Back to Top Button -->
-<button class="back-to-top" id="backToTopBtn" aria-label="العودة للأعلى">
-    <i class="fas fa-arrow-up"></i>
-</button>
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/Herafy/sw.js').then(reg => {
-
-    reg.onupdatefound = () => {
-      const newWorker = reg.installing;
-
-      newWorker.onstatechange = () => {
-        if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
-          showUpdateNotification();
-        }
-      };
-    };
-
-  });
-}
-</script>
-<script src="./assets/js/script.js"></script>
+    
+        <!-- صفحة التفاصيل المستقلة -->
+        <div id="detailPage" class="page">
+            <div class="container" id="detailContainer"></div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div><h4>حِرَفِيّ</h4><p>منصة ربط الحرفيين بأهل القرية بكل شفافية.</p></div>
+                <div><h4>روابط سريعة</h4><p><a href="#" style="color:#CFE4DF;" data-page="home">الرئيسية</a> | <a href="#" style="color:#CFE4DF;" data-page="home">الحرفيون</a></p></div>
+                <div><h4>تواصل</h4><i class="fab fa-whatsapp"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></div>
+            </div>
+            <div class="copyright" style="text-align:center; margin-top:30px;">© 2026 عادل محمود — جميع الحقوق محفوظة</div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/Herafy/sw.js').then(reg => {
+    
+        reg.onupdatefound = () => {
+          const newWorker = reg.installing;
+    
+          newWorker.onstatechange = () => {
+            if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+              showUpdateNotification();
+            }
+          };
+        };
+    
+      });
+    }
+    </script>
+    <script src="/Herafy/assets/js/script.js"></script>
 </body>
 </html>
