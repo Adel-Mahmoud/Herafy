@@ -3,44 +3,6 @@
         const loader = document.getElementById("loader");
         loader.classList.add("hidden");
     });
-
-    function showUpdateNotification() {
-      const div = document.createElement("div");
-      div.innerHTML = `
-        <div style="
-          position: fixed;
-          bottom: 20px;
-          left: 20px;
-          right: 20px;
-          background: #2A7F6E;
-          color: white;
-          padding: 15px;
-          border-radius: 10px;
-          text-align: center;
-          z-index: 9999;
-        ">
-          يوجد تحديث جديد 🔄
-          <button onclick="updateApp()" style="
-            margin-left:10px;
-            background:white;
-            color:black;
-            border:none;
-            padding:5px 10px;
-            border-radius:5px;
-          ">تحديث</button>
-        </div>
-      `;
-      document.body.appendChild(div);
-    }
-    
-    function updateApp() {
-      navigator.serviceWorker.getRegistration().then(reg => {
-        if (reg.waiting) {
-          reg.waiting.postMessage({ action: "skipWaiting" });
-        }
-        window.location.reload();
-      });
-    }
     
     // ---------- بيانات متطورة مع صور إضافية ومواقع خرائط ----------
     const providers = [
