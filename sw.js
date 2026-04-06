@@ -30,16 +30,27 @@ self.addEventListener("activate", event => {
 });
 
 self.addEventListener("fetch", event => {
+
+  if (event.request.method !== "GET") return;
+
   event.respondWith(
     caches.match(event.request).then(cached => {
-      const fetchPromise = fetch(event.request).then(networkRes => {
-        caches.open(CACHE_NAME).then(cache => {
-          cache.put(event.request, networkRes.clone());
-        });
-        return networkRes;
-      }).catch(() => cached);
 
-      return cached || fetchPromise;
+      return fetch(event.request).then(networkRes => {
+
+        if (!networkRes || networkRes.status !== 200 || networkRes.type !== "basic") {
+          return networkRes;
+        }
+
+        const clone = networkRes.clone();
+
+        caches.open(CACHE_NAME).then(cache => {
+          cache.put(event.request, clone);
+        });
+
+        return networkRes;
+
+      }).catch(() => cached);
     })
   );
 });
