@@ -76,7 +76,7 @@
                     </div>
                     
                     <h3><i class="fas fa-map-marker-alt"></i> موقع الخدمة</h3>
-                    <iframe src="${provider.location}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="${provider.location}" style="width:100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <h3><i class="fas fa-phone-alt"></i> التواصل المباشر</h3>
                     <div class="detail-phone">📞 ${provider.phone}</div>
                     
